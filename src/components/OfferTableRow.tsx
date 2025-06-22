@@ -15,14 +15,16 @@ export const OfferTableRow = ({ offerData }: Props) => {
         </div>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <div className="flex">
-          <div className="w-20 h-20">
+        <div className="flex items-center justify-center w-20 h-20">
+          {offerData.image ? (
             <img
-              className="w-full h-full rounded-full"
+              className="w-full h-full object-contain rounded"
               src={offerData.image}
               alt={`${offerData.offer.name} image`}
             />
-          </div>
+          ) : (
+            <span className="text-gray-500 text-xs italic">No image available</span>
+          )}
         </div>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
